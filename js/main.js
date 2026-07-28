@@ -199,8 +199,7 @@ function attachMusicControl() {
 }
 
 function attachSwipeNavigation() {
-  // Disable swipe-based page navigation on mobile to allow scrolling through content.
-  // The site now advances only via continue buttons.
+  // No swipe-based page navigation: only continue buttons move between screens.
 }
 
 function attachDeveloperMode() {
