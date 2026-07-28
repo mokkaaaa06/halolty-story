@@ -79,31 +79,17 @@ body {
 
 /* Mobile: center screens, add safe-area spacing, and ensure content cards do not exceed viewport and scroll internally when needed */
 @media (max-width: 860px) {
-  /* Prevent the body from scrolling; let the active .screen handle scrolling */
-  body {
-    overflow: hidden;
-  }
-
   .screen {
     align-items: center;
     min-height: 100dvh;
     box-sizing: border-box;
     padding-top: calc(env(safe-area-inset-top, 0px) + 20px);
     padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 20px);
-    overflow: auto;
-    -webkit-overflow-scrolling: touch;
   }
 
-  /* Remove internal card scrolling to avoid nested scrollbars and empty background reveal.
-     The .screen element now handles all vertical scrolling. */
-  .chapter-card,
-  .letter-card,
-  .proposal-card,
-  .counter-card,
-  .celebration-card {
-    max-height: none;
-    overflow: visible;
-  }
+  /* Do not change card overflow rules here — keep card-level scrolling
+     (letter/counter) intact so long pages remain scrollable inside their cards.
+     Avoid forcing body overflow changes to prevent unexpected side effects. */
 }
 
 .counter-panel {
