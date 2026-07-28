@@ -1,0 +1,176 @@
+.sparkle-layer::before,
+.sparkle-layer::after {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 100%;
+  background: radial-gradient(circle, rgba(255,255,255,0.98), rgba(232,140,168,0.8));
+  box-shadow: 0 0 28px rgba(232,140,168,0.25);
+  opacity: 0.85;
+  animation: sparkleFloat 7.5s ease-in-out infinite;
+}
+
+.sparkle-layer::before {
+  top: 12%;
+  left: 28%;
+  animation-delay: 0s;
+}
+
+.sparkle-layer::after {
+  top: 68%;
+  left: 82%;
+  animation-delay: 3.1s;
+}
+
+.heart-layer::before,
+.heart-layer::after {
+  content: '❤';
+  position: absolute;
+  font-size: 2rem;
+  color: rgba(232, 140, 168, 0.82);
+  text-shadow: 0 0 18px rgba(232, 140, 168, 0.25);
+  opacity: 0.7;
+  animation: heartFloat 12s ease-in-out infinite;
+}
+
+.heart-layer::before {
+  top: 40%;
+  left: 12%;
+  animation-delay: 1.2s;
+}
+
+.heart-layer::after {
+  top: 18%;
+  left: 74%;
+  animation-delay: 4.4s;
+}
+
+@keyframes sparkleFloat {
+  0%, 100% {
+    transform: translate(0, 0) scale(0.9);
+    opacity: 0.85;
+  }
+  50% {
+    transform: translate(10px, -16px) scale(1.1);
+    opacity: 1;
+  }
+}
+
+@keyframes heartFloat {
+  0% {
+    transform: translateY(0) scale(0.9);
+  }
+  50% {
+    transform: translateY(-28px) scale(1);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(0) scale(0.95);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 24px 64px rgba(244, 143, 177, 0.18);
+  }
+  50% {
+    box-shadow: 0 28px 86px rgba(244, 143, 177, 0.3);
+  }
+}
+
+@keyframes imageZoom {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.06);
+  }
+}
+
+.boost {
+  animation: pulseGlow 3.5s ease-in-out infinite alternate;
+}
+
+.final-image {
+  animation: imageZoom 30s ease-in-out infinite alternate;
+}
+
+.animate-in {
+  animation: fadeInUp 0.9s ease forwards;
+}
+
+.animate-slide {
+  animation: slideInLeft 0.95s ease forwards;
+}
+
+.fade-up[data-animate] {
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+.visible[data-animate='fade-up'] {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.visible[data-animate='slide-in'] {
+  animation: slideInLeft 0.85s ease forwards;
+}
+
+.delay-200 {
+  animation-delay: 0.2s;
+}
+
+.delay-400 {
+  animation-delay: 0.4s;
+}
+
+.delay-600 {
+  animation-delay: 0.6s;
+}
+
+.delay-800 {
+  animation-delay: 0.8s;
+}
+
+.confetti-piece {
+  position: absolute;
+  width: 8px;
+  height: 14px;
+  background: linear-gradient(135deg, #fff9f9 0%, #f48fb1 100%);
+  opacity: 0.9;
+  pointer-events: none;
+  filter: drop-shadow(0 0 14px rgba(232, 140, 168, 0.4));
+  will-change: transform, opacity;
+}
+
+.heart-burst {
+  position: absolute;
+  font-size: 1.4rem;
+  color: rgba(232, 140, 168, 0.92);
+  text-shadow: 0 0 18px rgba(232, 140, 168, 0.3);
+  pointer-events: none;
+  will-change: transform, opacity;
+}

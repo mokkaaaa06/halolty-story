@@ -1,0 +1,12 @@
+{
+  "name": "halolty-proposal",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Romantic proposal website",
+  "scripts": {
+    "dev": "npx serve .",
+    "start": "npx serve .",
+    "build": "echo \"Static site ready\""
+  },
+  "license": "MIT"
+}

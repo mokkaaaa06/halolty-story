@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hiiii haloltyy ❤️</title>
+    <meta
+      name="description"
+      content="A luxury romantic proposal experience created with elegant chapter-by-chapter storytelling."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
+    <div class="page-shell" id="pageShell">
+      <div class="sparkle-layer" aria-hidden="true"></div>
+      <div class="heart-layer" aria-hidden="true"></div>
+
+      <div class="screen-container" id="screenContainer">
+        <section class="screen screen-opening active" data-screen="opening">
+          <div class="chapter-card opening-card glass-card">
+            <p class="eyebrow" id="openingSubtitle">Hiiii haloltyy ❤️</p>
+            <h1 class="opening-title" id="openingTitle">I made something for you.</h1>
+            <p class="opening-copy" id="openingCopy">Whenever you're ready...</p>
+            <button class="action-button" id="beginButton" type="button">Begin 💗</button>
+          </div>
+        </section>
+
+        <section class="screen screen-story" data-screen="story">
+          <div class="chapter-card story-card glass-card">
+            <span class="section-number">Chapter <span id="storyChapterNumber">1</span></span>
+            <h2 class="chapter-title" id="storyTitle"></h2>
+            <p class="chapter-copy" id="storyCopy"></p>
+            <button class="continue-button" id="storyContinueButton" type="button">Continue →</button>
+          </div>
+        </section>
+
+        <section class="screen screen-letter" data-screen="letter">
+          <div class="letter-card glass-card">
+            <span class="section-number">The Letter</span>
+            <div class="letter-copy" id="letterContent"></div>
+            <button class="continue-button" id="letterContinueButton" type="button">Continue →</button>
+          </div>
+        </section>
+
+        <section class="screen screen-proposal" data-screen="proposal">
+          <div class="proposal-card glass-card">
+            <span class="section-number">The Question</span>
+            <h2 class="proposal-title" id="proposalTitle"></h2>
+            <p class="proposal-copy" id="proposalCopy"></p>
+            <div class="proposal-actions">
+              <button class="choice-button" id="yesButton" type="button">YES ❤️</button>
+              <button class="choice-button" id="obviousButton" type="button">Obviously Yes ❤️</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="screen screen-celebration" data-screen="celebration">
+          <div class="celebration-card glass-card">
+            <p class="celebration-text" id="celebrationText">You just made me the happiest person.</p>
+          </div>
+        </section>
+
+        <section class="screen screen-counter" data-screen="counter">
+          <div class="counter-card glass-card">
+            <span class="section-number">Relationship Counter</span>
+            <h2 class="chapter-title"></h2>
+            <div class="counter-panel" id="finalCounter"></div>
+            <button class="continue-button" id="counterContinueButton" type="button">Keep Reading →</button>
+          </div>
+        </section>
+
+        <section class="screen screen-final" data-screen="final">
+          <div class="final-media card-glow">
+            <div class="final-image-card">
+              <img
+                src="assets/us-count-photo.jpeg"
+                alt="Our special moment together"
+                class="final-image"
+              />
+            </div>
+            <div class="final-summary">
+              <div class="final-overlay">
+                <h2 id="finalOverlayText">US COUNT ❤️</h2>
+                <div class="counter-panel" id="finalMemoryCounter"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <aside class="music-control" aria-label="Music control">
+        <button class="music-button" id="musicButton" type="button">🎵 Play our song</button>
+      </aside>
+
+      <div class="dev-panel" id="devPanel" hidden>
+        <h3>Developer Tools</h3>
+        <button class="dev-action" id="toggleTestMode">Toggle Test Mode</button>
+        <button class="dev-action" id="resetCounter">Reset Counter</button>
+        <button class="dev-action" id="skipProposal">Skip To Proposal</button>
+        <button class="dev-action" id="previewCelebration">Preview Celebration</button>
+        <button class="dev-action" id="previewCounter">Preview Counter</button>
+      </div>
+
+      <audio id="proposalAudio" src="assets/Frank_Sinatra_-_It_Had_To_Be_You_When_Harry_Met_Sally_OST_(mp3.pm).mp3" preload="none"></audio>
+    </div>
+
+    <script src="data/config.js"></script>
+    <script src="data/content.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/counter.js"></script>
+    <script src="js/proposal.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
