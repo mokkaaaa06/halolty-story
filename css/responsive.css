@@ -10,10 +10,6 @@ body {
   justify-items: center;
 }
 
-.screen.active {
-  min-height: 100vh;
-}
-
 .section-number {
   font-size: 0.82rem;
 }
@@ -78,6 +74,27 @@ body {
 @media (min-width: 860px) {
   .final-media {
     grid-template-columns: minmax(320px, 1.6fr) minmax(300px, 1fr);
+  }
+}
+
+/* Mobile: center screens, add safe-area spacing, and ensure content cards do not exceed viewport and scroll internally when needed */
+@media (max-width: 860px) {
+  .screen {
+    align-items: center;
+    min-height: 100dvh;
+    box-sizing: border-box;
+    padding-top: calc(env(safe-area-inset-top, 0px) + 20px);
+    padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 20px);
+  }
+
+  .chapter-card,
+  .letter-card,
+  .proposal-card,
+  .counter-card,
+  .celebration-card {
+    max-height: calc(100dvh - (env(safe-area-inset-top, 0px) + env(safe-area-inset-bottom, 0px) + 64px));
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
 }
 
