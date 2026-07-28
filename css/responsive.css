@@ -8,7 +8,6 @@ body {
   padding: 0 1rem;
   align-items: flex-start;
   justify-items: center;
-  overflow-y: auto;
 }
 
 .screen.active {

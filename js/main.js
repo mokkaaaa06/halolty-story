@@ -27,18 +27,11 @@ function setActiveScreen(screenName) {
   if (!next || appState.currentScreen === screenName) return;
 
   if (current) {
-    current.classList.add('exiting');
-    const handleTransitionEnd = (event) => {
-      if (event.propertyName !== 'opacity') return;
-      current.classList.remove('active', 'exiting');
-      current.removeEventListener('transitionend', handleTransitionEnd);
-    };
-    current.addEventListener('transitionend', handleTransitionEnd);
+    current.classList.remove('active');
   }
 
-  next.classList.add('active', 'entering');
-  window.requestAnimationFrame(() => next.classList.remove('entering'));
-
+  next.classList.add('active');
+  window.scrollTo(0, 0);
   appState.currentScreen = screenName;
 }
 
@@ -73,8 +66,11 @@ function applyContent() {
 function animateStoryChapter() {
   const storyScreen = getScreenElement('story');
   if (!storyScreen) return;
-  storyScreen.classList.add('entering');
-  window.requestAnimationFrame(() => storyScreen.classList.remove('entering'));
+  const storyCard = storyScreen.querySelector('.story-card');
+  if (!storyCard) return;
+
+  storyCard.classList.add('content-entering');
+  window.requestAnimationFrame(() => storyCard.classList.remove('content-entering'));
 }
 
 function attachChapterButtons() {

@@ -63,33 +63,15 @@ img {
 }
 
 .screen {
-  display: grid;
+  display: none;
   align-items: start;
   justify-items: center;
   min-height: 100vh;
-  height: 0;
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transform: translateY(16px);
-  transition: opacity 0.8s ease, transform 0.8s ease, visibility 0.8s ease, filter 0.8s ease, height 0.8s ease;
+  padding: 1.5rem 0;
 }
 
-.screen.active,
-.screen.entering {
-  opacity: 1;
-  visibility: visible;
-  height: auto;
-  pointer-events: auto;
-  transform: translateY(0);
-}
-
-.screen.exiting {
-  opacity: 0;
-  visibility: visible;
-  height: auto;
-  pointer-events: auto;
-  transform: translateY(-16px);
+.screen.active {
+  display: grid;
 }
 
 .screen.screen-final,
@@ -98,7 +80,6 @@ img {
 .screen.screen-proposal,
 .screen.screen-story {
   align-items: flex-start;
-  padding: 1.5rem 0;
 }
 
 .counter-card {
@@ -106,15 +87,6 @@ img {
   overflow-y: auto;
 }
 
-.screen.entering {
-  filter: blur(0px);
-}
-
-.screen.exiting {
-  transform: translateY(-24px);
-  opacity: 0;
-  filter: blur(2px) brightness(1.05);
-}
 
 .chapter-card,
 .letter-card,
