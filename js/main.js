@@ -4,7 +4,6 @@ const appState = {
   storyIndex: 0,
   storyScreens: ['story-1', 'story-2', 'story-3'],
   storyTimeout: null,
-  swipeStartY: null,
 };
 
 const screenOrder = ['opening', 'story', 'letter', 'proposal', 'celebration', 'counter', 'final'];
@@ -54,27 +53,6 @@ function previousScreen() {
   if (currentIndex <= 0) return;
   const previousScreenName = screenOrder[currentIndex - 1];
   setActiveScreen(previousScreenName);
-}
-
-function handleSwipeGesture(event) {
-  if (event.touches.length !== 1) return;
-  const touch = event.touches[0];
-  appState.swipeStartY = touch.clientY;
-}
-
-function handleSwipeEnd(event) {
-  if (!appState.swipeStartY || event.changedTouches.length !== 1) return;
-  const touch = event.changedTouches[0];
-  const deltaY = touch.clientY - appState.swipeStartY;
-  if (Math.abs(deltaY) < 80) return;
-
-  if (deltaY < 0) {
-    nextScreen();
-  } else {
-    previousScreen();
-  }
-
-  appState.swipeStartY = null;
 }
 
 function applyContent() {
