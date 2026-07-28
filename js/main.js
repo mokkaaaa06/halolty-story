@@ -199,10 +199,8 @@ function attachMusicControl() {
 }
 
 function attachSwipeNavigation() {
-  const container = document.getElementById('screenContainer');
-  if (!container) return;
-  container.addEventListener('touchstart', handleSwipeGesture, { passive: true });
-  container.addEventListener('touchend', handleSwipeEnd, { passive: true });
+  // Disable swipe-based page navigation on mobile to allow scrolling through content.
+  // The site now advances only via continue buttons.
 }
 
 function attachDeveloperMode() {
