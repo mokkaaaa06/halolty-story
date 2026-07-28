@@ -2,12 +2,11 @@
   "name": "halolty-proposal",
   "version": "1.0.0",
   "private": true,
-  "description": "Romantic proposal website built with HTML, CSS, and vanilla JavaScript.",
+  "description": "Romantic proposal website",
   "scripts": {
-    "start": "npx serve .",
     "dev": "npx serve .",
-    "test": "echo \"No tests configured\" && exit 0"
+    "start": "npx serve .",
+    "build": "echo \"Static site ready\""
   },
-  "author": "",
   "license": "MIT"
 }
