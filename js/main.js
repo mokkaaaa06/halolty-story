@@ -6,8 +6,6 @@ const appState = {
   storyTimeout: null,
 };
 
-const screenOrder = ['opening', 'story', 'letter', 'proposal', 'celebration', 'counter', 'final'];
-
 function getScreenElement(screenName) {
   return document.querySelector(`.screen[data-screen="${screenName}"]`);
 }
@@ -39,20 +37,6 @@ function setActiveScreen(screenName) {
   window.requestAnimationFrame(() => next.classList.remove('entering'));
 
   appState.currentScreen = screenName;
-}
-
-function nextScreen() {
-  const currentIndex = screenOrder.indexOf(appState.currentScreen);
-  if (currentIndex === -1 || currentIndex === screenOrder.length - 1) return;
-  const nextScreenName = screenOrder[currentIndex + 1];
-  setActiveScreen(nextScreenName);
-}
-
-function previousScreen() {
-  const currentIndex = screenOrder.indexOf(appState.currentScreen);
-  if (currentIndex <= 0) return;
-  const previousScreenName = screenOrder[currentIndex - 1];
-  setActiveScreen(previousScreenName);
 }
 
 function applyContent() {
@@ -177,7 +161,7 @@ function attachMusicControl() {
 }
 
 function attachSwipeNavigation() {
-  // No swipe-based page navigation: only continue buttons move between screens.
+  // Swipe and touch navigation are disabled. Navigation is only button-driven.
 }
 
 function attachDeveloperMode() {
