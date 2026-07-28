@@ -27,13 +27,16 @@ function setActiveScreen(screenName) {
   if (!next || appState.currentScreen === screenName) return;
 
   if (current) {
-    current.classList.remove('active');
     current.classList.add('exiting');
-    window.setTimeout(() => current.classList.remove('exiting'), 900);
+    const handleTransitionEnd = (event) => {
+      if (event.propertyName !== 'opacity') return;
+      current.classList.remove('active', 'exiting');
+      current.removeEventListener('transitionend', handleTransitionEnd);
+    };
+    current.addEventListener('transitionend', handleTransitionEnd);
   }
 
-  next.classList.add('active');
-  next.classList.add('entering');
+  next.classList.add('active', 'entering');
   window.requestAnimationFrame(() => next.classList.remove('entering'));
 
   appState.currentScreen = screenName;

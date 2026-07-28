@@ -46,8 +46,7 @@ img {
 }
 
 .screen-container {
-  position: relative;
-  min-height: 100vh;
+  min-height: auto;
 }
 
 .page-shell {
@@ -64,22 +63,33 @@ img {
 }
 
 .screen {
-  position: absolute;
-  inset: 0;
   display: grid;
-  place-items: center;
+  align-items: start;
+  justify-items: center;
+  min-height: 100vh;
+  height: 0;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transform: translateY(28px);
-  transition: opacity 0.8s ease, transform 0.8s ease, visibility 0.8s ease, filter 0.8s ease;
+  transform: translateY(16px);
+  transition: opacity 0.8s ease, transform 0.8s ease, visibility 0.8s ease, filter 0.8s ease, height 0.8s ease;
 }
 
-.screen.active {
+.screen.active,
+.screen.entering {
   opacity: 1;
   visibility: visible;
+  height: auto;
   pointer-events: auto;
   transform: translateY(0);
+}
+
+.screen.exiting {
+  opacity: 0;
+  visibility: visible;
+  height: auto;
+  pointer-events: auto;
+  transform: translateY(-16px);
 }
 
 .screen.screen-final,
@@ -88,8 +98,6 @@ img {
 .screen.screen-proposal,
 .screen.screen-story {
   align-items: flex-start;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
   padding: 1.5rem 0;
 }
 
