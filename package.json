@@ -5,8 +5,7 @@
   "description": "Romantic proposal website",
   "scripts": {
     "dev": "npx serve .",
-    "start": "npx serve .",
-    "build": "echo \"Static site ready\""
+    "start": "npx serve ."
   },
   "license": "MIT"
 }
