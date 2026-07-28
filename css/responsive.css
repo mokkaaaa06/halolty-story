@@ -6,6 +6,21 @@ body {
 
 .screen {
   padding: 0 1rem;
+  align-items: flex-start;
+  justify-items: center;
+  overflow-y: auto;
+}
+
+.screen.active {
+  min-height: 100vh;
+}
+
+.section-number {
+  font-size: 0.82rem;
+}
+
+.chapter-title {
+  font-size: clamp(1.9rem, 7vw, 3rem);
 }
 
 .letter-card,
@@ -15,16 +30,18 @@ body {
 .celebration-card {
   width: min(100%, 100%);
   max-width: 100%;
-  padding: 1.5rem;
+  padding: 1.25rem;
 }
 
 .letter-card {
-  max-height: calc(100vh - 100px);
+  max-height: calc(100vh - 120px);
 }
 
 .final-media {
   grid-template-columns: 1fr;
+  gap: 1rem;
   min-height: auto;
+  width: 100%;
 }
 
 .final-summary {
@@ -32,11 +49,31 @@ body {
 }
 
 .final-overlay {
-  padding: 1.5rem;
+  padding: 1.25rem;
 }
 
 .final-image {
-  min-height: 260px;
+  min-height: 220px;
+}
+
+.counter-panel {
+  gap: 0.75rem;
+}
+
+.counter-item {
+  width: 100%;
+}
+
+.continue-button,
+.action-button,
+.choice-button {
+  padding: 1rem 1.2rem;
+  font-size: 0.95rem;
+}
+
+.music-control {
+  right: 0.85rem;
+  bottom: 0.85rem;
 }
 
 @media (min-width: 860px) {
